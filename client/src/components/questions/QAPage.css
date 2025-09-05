@@ -1,0 +1,141 @@
+/* Page background fade */
+body {
+  background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+  animation: fadeBackground 1.8s ease-in forwards;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Fade animation */
+@keyframes fadeBackground {
+  from {
+    background: #ffffff;
+  }
+  to {
+    background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+  }
+}
+
+/* Container */
+.qa-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.2s ease forwards 0.3s;
+}
+
+/* Fade-in animation for content */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.qa-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.qa-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.qa-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Form */
+.qa-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.qa-form input {
+  flex: 1;
+  max-width: 70%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.qa-form input:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+.qa-form button {
+  background: #1cc2a0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.qa-form button:hover {
+  background: #17a387;
+  transform: scale(1.05);
+}
+
+/* Q&A list */
+.qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.qa-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.qa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.qa-question {
+  font-weight: 600;
+  color: #0d2b52;
+  margin-bottom: 0.75rem;
+}
+.qa-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+.qa-answer {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-left: 4px solid #1cc2a0;
+  background: #f9fdfc;
+  border-radius: 6px;
+}
+.qa-answer strong {
+  color: #1cc2a0;
+}
+
+/* Empty / messages */
+.qa-empty {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+.qa-error {
+  color: #e63946;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.qa-success {
+  color: #1cc2a0;
+  text-align: center;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,95 @@
+/* === Overlay === */
+.match-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Slightly dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+  backdrop-filter: blur(3px); /* Subtle blur behind popup */
+}
+
+/* === Popup Card === */
+.match-popup-card {
+  background: linear-gradient(135deg, #ffffff, #f5f7fa, #e6e9ef);
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 380px;
+  max-width: 90%;
+  animation: slideUp 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Add smooth hover effect on popup */
+.match-popup-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* === Headings === */
+.match-popup-card h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* === Text === */
+.match-popup-card p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+/* === Buttons === */
+.match-popup-btn {
+  background: linear-gradient(135deg, #4cafef, #2196f3);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 12px rgba(76, 175, 239, 0.4);
+}
+
+/* Hover button */
+.match-popup-btn:hover {
+  background: linear-gradient(135deg, #319fe7, #1e88e5);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 18px rgba(33, 150, 243, 0.5);
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

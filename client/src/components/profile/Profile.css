@@ -1,0 +1,250 @@
+/* 🌟 Smooth Fade-in Background */
+body {
+  background: linear-gradient(135deg, #ffffff, #f1f1f1, #e6e6e6);
+  animation: fadeInBg 1.5s ease-in-out forwards;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Fade-in effect for the entire page */
+@keyframes fadeInBg {
+  0% {
+    background: #ffffff;
+    opacity: 0;
+  }
+  100% {
+    background: linear-gradient(135deg, #ffffff, #f1f1f1, #e6e6e6);
+    opacity: 1;
+  }
+}
+
+/* Profile container */
+.profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  animation: fadeInContent 1.0s ease-in-out;
+}
+
+/* Smooth fade-in for content */
+@keyframes fadeInContent {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #0d2b52;
+}
+
+.error-message {
+  color: #e63946;
+  margin-top: 0.5rem;
+}
+
+/* Profile Cards */
+.profile-card,
+.profile-edit-card {
+  background: #ffffffcc;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-card:hover,
+.profile-edit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid #f1f1f1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.profile-header h2 {
+  font-size: 1.8rem;
+  color: #0d2b52;
+}
+
+.profile-role {
+  color: #1cc2a0;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Details */
+.profile-details p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Inputs */
+.profile-edit-card input,
+.profile-edit-card textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  background: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-edit-card input:focus,
+.profile-edit-card textarea:focus {
+  border-color: #1cc2a0;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(28, 194, 160, 0.25);
+}
+
+.profile-edit-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #1cc2a0;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #159b80;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* Profile grid for other users */
+.profiles-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInContent 1.0s ease-in-out;
+}
+
+.profiles-title {
+  font-size: 2rem;
+  color: #0d2b52;
+  margin-bottom: 1rem;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Smaller profile pics */
+.profile-pic-small {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* --- My Skills Page --- */
+.skills-page {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffffcc;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  animation: fadeInContent 1.0s ease-in-out;
+}
+
+.skills-title {
+  font-size: 1.8rem;
+  color: #0d2b52;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  background: #fafafa;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.skill-item:hover {
+  background: #f2f2f2;
+  transform: translateX(3px);
+}
+
+.btn-remove {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-remove:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
