@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://bula-next-backend.onrender.com/',
 });
 
 // Add a request interceptor to include token if available
