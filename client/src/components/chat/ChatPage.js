@@ -47,16 +47,17 @@ const ChatPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Fetch recipient profile
         const res = await api.get(`/users/profiles/${id}`);
         setRecipient(res.data);
 
+        // Always try to fetch the conversation with the other user
         let convoRes;
         try {
-          // 🔎 First check if conversation exists
           convoRes = await api.get(`/chat/conversations/with/${id}`);
         } catch (err) {
+          // Only create if not found (404)
           if (err.response?.status === 404) {
-            // If not, create it
             convoRes = await api.post("/chat/conversations", { recipientId: id });
           } else {
             throw err;
@@ -64,7 +65,7 @@ const ChatPage = () => {
         }
         setConversationId(convoRes.data._id);
 
-        // Always fetch fresh messages
+        // Fetch messages for the conversation
         const msgRes = await api.get(
           `/chat/conversations/${convoRes.data._id}/messages`
         );
@@ -74,7 +75,7 @@ const ChatPage = () => {
       }
     };
     fetchData();
-  }, [id]);
+  }, [id, currentUserId]); // <-- add currentUserId to dependencies
 
   // Poll messages
   useEffect(() => {
