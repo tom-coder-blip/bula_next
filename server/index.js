@@ -31,6 +31,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Health check route
+app.get("/", (req, res) => {
+  res.send("🚀 BulaNext Backend is running!");
+});
+
 // Routes mounting API endpoints
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);

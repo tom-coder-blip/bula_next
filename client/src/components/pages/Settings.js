@@ -13,7 +13,7 @@ const Settings = () => {
             localStorage.removeItem("user");
             localStorage.removeItem("token");
             alert("Account deleted successfully");
-            window.location.href = "/login";
+            window.location.href = "/";
         } catch (err) {
             alert("Failed to delete account");
         }
@@ -22,7 +22,7 @@ const Settings = () => {
     const handleLogout = () => {
         localStorage.removeItem("user");
         localStorage.removeItem("token")
-        window.location.href = "/login";
+        window.location.href = "/";
     };
 
     const handleClearData = () => {
