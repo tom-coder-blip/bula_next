@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: bula-next-frontend
+    env: node
+    rootDir: client
+    buildCommand: npm run build
+    startCommand: serve -s build
+    envVars:
+      - key: NODE_ENV
+        value: production
