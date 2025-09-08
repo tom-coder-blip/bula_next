@@ -22,7 +22,7 @@ const Settings = () => {
     const handleLogout = () => {
         localStorage.removeItem("user");
         localStorage.removeItem("token")
-        window.location.href = "/login";
+        window.location.href = "/";
     };
 
     const handleClearData = () => {
