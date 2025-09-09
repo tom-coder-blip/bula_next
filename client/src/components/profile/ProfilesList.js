@@ -106,7 +106,7 @@ const ProfilesList = () => {
               <img
               src={
                 profile.profilePicture
-                  ? `http://localhost:5000${profile.profilePicture}`
+                  ? `${process.env.REACT_APP_API_URL.replace('/api', '')}${profile.profilePicture}`
                   : "https://cdn-icons-png.flaticon.com/512/847/847969.png"
               }
               alt="Profile"
