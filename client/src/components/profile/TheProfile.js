@@ -29,6 +29,7 @@ const TheProfile = () => {
 
   if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error-message">{error}</div>;
+  if (!user) return <div className="error-message">Profile not found</div>;
 
   const handleMessageClick = () => {
     navigate(`/chat/${user._id}`);
@@ -45,8 +46,8 @@ const TheProfile = () => {
 
   // --- Show button only if roles are opposite (learner->mentor OR mentor->learner)
   const canSendRequest =
-    (currentUser?.role === "learner" && user.role === "mentor") ||
-    (currentUser?.role === "mentor" && user.role === "learner");
+    (currentUser?.role === "learner" && user?.role === "mentor") ||
+    (currentUser?.role === "mentor" && user?.role === "learner");
 
   return (
     <div className="profile-container">
@@ -54,7 +55,7 @@ const TheProfile = () => {
         <div className="profile-header">
           <img
             src={
-              user.profilePicture
+              user?.profilePicture
                 ? `${process.env.REACT_APP_API_URL.replace('/api', '')}${user.profilePicture}`
                 : "https://cdn-icons-png.flaticon.com/512/847/847969.png"
             }
@@ -67,22 +68,22 @@ const TheProfile = () => {
               marginBottom: "10px",
             }}
           />
-          <h2>{user.firstname} {user.lastname}</h2>
-          <p className="profile-role">{user.role}</p>
+          <h2>{user?.firstname} {user?.lastname}</h2>
+          <p className="profile-role">{user?.role}</p>
         </div>
 
         <div className="profile-details">
-          <p><strong>Status:</strong> {user.status || "Unmatched"}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Location:</strong> {user.location}</p>
+          <p><strong>Status:</strong> {user?.status || "Unmatched"}</p>
+          <p><strong>Email:</strong> {user?.email}</p>
+          <p><strong>Location:</strong> {user?.location}</p>
           <p>
             <strong>Interests:</strong>{" "}
-            {Array.isArray(user.interests)
+            {Array.isArray(user?.interests)
               ? user.interests.join(", ")
-              : user.interests}
+              : user?.interests}
           </p>
-          <p><strong>Experience:</strong> {user.experience || 'N/A'} years</p>
-          <p><strong>Goals:</strong> {user.goals || 'N/A'}</p>
+          <p><strong>Experience:</strong> {user?.experience || 'N/A'} years</p>
+          <p><strong>Goals:</strong> {user?.goals || 'N/A'}</p>
         </div>
 
         <div className="profile-actions">
