@@ -21,8 +21,8 @@ import cors from 'cors'; //middleware for cross origin request sharing
 // Load env vars
 dotenv.config({ path: path.resolve("server/.env") })
 
-console.log("✅ EMAIL_USER:", process.env.EMAIL_USER);
-console.log("✅ EMAIL_PASS:", process.env.EMAIL_PASS ? "Loaded" : "Missing");
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Loaded" : "Missing");
 
 const app = express(); //app is the main server application.
 const PORT = process.env.PORT || 5000;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import api from "../../services/api";
-import "./Profile.css"; // ✅ import styles
+import { useNavigate } from "react-router-dom";
+import "./Profile.css";
 
 const ProfilesList = () => {
   const [profiles, setProfiles] = useState([]);
@@ -18,6 +19,7 @@ const ProfilesList = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchTerm = searchParams.get("search") || "";
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (searchTerm) {
@@ -131,7 +133,7 @@ const ProfilesList = () => {
             </p>
             <button
               className="btn-secondary"
-              onClick={() => (window.location.href = `/profiles/${profile._id}`)}
+              onClick={() => navigate(`/profiles/${profile._id}`)}
             >
               View Profile
             </button>
