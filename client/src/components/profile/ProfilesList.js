@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import api from "../../services/api";
-import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 
 const ProfilesList = () => {
@@ -102,11 +101,10 @@ const ProfilesList = () => {
       <div className="profiles-grid">
         {profiles.map((profile) => (
           <div key={profile._id} className="profile-card">
-            {profile.profilePicture && (
-              <img
+            <img
               src={
-                profile.profilePicture
-                  ? `${process.env.REACT_APP_API_URL.replace('/api', '')}${user.profilePicture}`
+                profile?.profilePicture
+                  ? `${process.env.REACT_APP_API_URL.replace("/api", "")}${profile.profilePicture}`
                   : "https://cdn-icons-png.flaticon.com/512/847/847969.png"
               }
               alt="Profile"
@@ -118,7 +116,6 @@ const ProfilesList = () => {
                 marginBottom: "10px",
               }}
             />
-            )}
             <h3>
               {profile.firstname} {profile.lastname}
             </h3>
