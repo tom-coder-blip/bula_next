@@ -227,7 +227,7 @@ const ChatPage = () => {
                             }}
                           >
                             <img
-                              src={`${process.env.REACT_APP_API_URL || "http://localhost:5000"}${msg.imageUrl}`}
+                              src={`${(process.env.REACT_APP_API_URL || "http://localhost:5000").replace("/api", "")}${msg.imageUrl}`}
                               alt="sent"
                               className="chat-image"
                               style={{
